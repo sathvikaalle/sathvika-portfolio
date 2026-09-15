@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Sathvika Alle — Product Design Portfolio</title>
+<title>Sathvika Alle - Product Design Portfolio</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&family=Public+Sans:wght@400;500;600&display=swap" rel="stylesheet">
@@ -254,6 +254,19 @@
     gap: 40px 48px;
   }
 
+  .minor-item.wide {
+    grid-column: 1 / -1;
+  }
+
+  .minor-item .case-image {
+    margin: 20px 0 0;
+    max-width: 100%;
+  }
+
+  .duo-grid.even {
+    grid-template-columns: 1fr 1fr;
+  }
+
   .minor-item h3 {
     font-size: 19px;
     font-weight: 600;
@@ -343,7 +356,7 @@
 <header class="hero">
   <div class="wrap">
     <h1>Sathvika Alle</h1>
-    <p class="role">Product designer working across research, interaction and visual design — currently building the authenticated, multi-user side of a live platform for university capstone coordinators.</p>
+    <p class="role">Product designer working across research, interaction and visual design - currently building the authenticated, multi-user side of a live platform for university capstone coordinators.</p>
     <div class="contact-row">
       <a href="mailto:sathvikaalle@gmail.com">sathvikaalle@gmail.com</a>
       <a href="https://www.linkedin.com/in/sathvikaalle" target="_blank" rel="noopener">LinkedIn</a>
@@ -431,7 +444,7 @@
 
     <div class="reflection">
       <h3>What I'd do differently</h3>
-      <p>If I could revisit one decision, it'd be mobile navigation. The current pattern works, but it wasn't designed with the same care as the desktop flows, and it shows on smaller screens. It's actually something the team is actively reworking right now: a good reminder that responsive design needs the same iteration as the first pass, not just a scaled-down version of it.</p>
+      <p>If I could revisit one decision, it'd be mobile navigation. The current pattern works, but it wasn't designed with the same care as the desktop flows, and it shows on smaller screens. It's actually something the team is actively reworking right now — a good reminder that responsive design needs the same iteration as the first pass, not just a scaled-down version of it.</p>
     </div>
   </div>
 </section>
@@ -441,21 +454,25 @@
     <h2>Other design work</h2>
     <div class="minor-grid">
 
+      <div class="minor-item wide">
+        <span class="tag">Figma — HCI coursework</span>
+        <h3>BestEthical.kiwi — applying HCI theory to interface design</h3>
+        <p>A KiwiSaver fund landing page and registration flow, designed against specific principles rather than general instinct: Gestalt figure-ground and proximity, Nielsen's recognition-over-recall, and accessible form structure with labelled fields and strong colour contrast throughout.</p>
+        <figure class="case-image">
+          <div class="duo-grid even">
+            <img src="images/bestethical-landing.png" alt="BestEthical.kiwi landing page hero section with a large high-contrast heading and two call-to-action buttons against a dark teal background.">
+            <img src="images/bestethical-registration.png" alt="KiwiSaver registration form grouped into three columns — personal information, contact and tax, and tax and employment.">
+          </div>
+          <figcaption>Left: figure-ground — the oversized, high-contrast heading and CTA advance against the darker background, directing attention to "Join or switch KiwiSaver" before the testimonial below. Right: proximity and common region — fields group into three visually separated columns, and selectable rate and employment options replace recall with recognition.</figcaption>
+        </figure>
+      </div>
+
       <div class="minor-item">
         <span class="tag">Figma prototype</span>
         <h3>UI/UX design project</h3>
         <p>An interactive interface prototype built around a small reusable component system, with navigation and interaction decisions driven directly by user-needs analysis.</p>
         <div class="img-placeholder small">
           Add: 2–3 key screens from the prototype, or a link to the live Figma file set to "anyone with the link can view."
-        </div>
-      </div>
-
-      <div class="minor-item">
-        <span class="tag">Webflow &amp; Figma — HCI coursework</span>
-        <h3>Applying HCI theory to interface design</h3>
-        <p>Coursework applying Fitts' Law, Nielsen's heuristics and Gestalt principles to page and component design, built and tested in Webflow alongside a matching Figma component system.</p>
-        <div class="img-placeholder small">
-          Add: a before/after or annotated screenshot showing one specific HCI principle in action — this is a good place to show your reasoning, not just the output.
         </div>
       </div>
 
@@ -497,7 +514,7 @@
     <div class="contact-row">
       <a href="mailto:sathvikaalle@gmail.com">sathvikaalle@gmail.com</a>
       <a href="https://www.linkedin.com/in/sathvikaalle" target="_blank" rel="noopener">LinkedIn</a>
-      <a href="#" target="_blank" rel="noopener">GitHub — add your link</a>
+      <a href="https://github.com/sathvikaalle" target="_blank" rel="noopener">GitHub</a>
     </div>
   </div>
 </footer>
