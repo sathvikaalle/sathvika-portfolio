@@ -85,6 +85,97 @@
   .contact-row a { color: var(--ink-soft); }
   .contact-row a:hover { color: var(--accent); }
 
+  /* ---- Entrance animation ---- */
+
+  @keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(16px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .fade-in-1, .fade-in-2, .fade-in-3, .fade-in-4 {
+    opacity: 0;
+    animation: fadeInUp 0.7s cubic-bezier(.2,.7,.3,1) forwards;
+  }
+  .fade-in-1 { animation-delay: 0.05s; }
+  .fade-in-2 { animation-delay: 0.2s; }
+  .fade-in-3 { animation-delay: 0.35s; }
+  .fade-in-4 { animation-delay: 0.45s; }
+
+  @media (prefers-reduced-motion: reduce) {
+    .fade-in-1, .fade-in-2, .fade-in-3, .fade-in-4 { animation: none; opacity: 1; }
+    .polaroid { transition: none !important; }
+  }
+
+  /* ---- Hero layout ---- */
+
+  .hero-wrap {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 48px;
+  }
+
+  .hero-text { flex: 1; min-width: 0; }
+
+  /* ---- Polaroid stack ---- */
+
+  .polaroid-stack {
+    position: relative;
+    width: 200px;
+    height: 220px;
+    flex-shrink: 0;
+    cursor: pointer;
+    outline: none;
+  }
+
+  .polaroid {
+    position: absolute;
+    top: 10px;
+    left: 25px;
+    width: 150px;
+    background: #fff;
+    padding: 10px 10px 26px;
+    border-radius: 2px;
+    box-shadow: 0 10px 24px rgba(24,28,31,0.18);
+    transition: transform 0.5s cubic-bezier(.2,.8,.2,1);
+  }
+
+  .polaroid .photo-placeholder {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    background: var(--accent-tint);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 11px;
+    color: var(--ink-faint);
+    text-align: center;
+    padding: 8px;
+  }
+
+  .polaroid img {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    display: block;
+  }
+
+  .polaroid.p1 { transform: rotate(-7deg); z-index: 3; }
+  .polaroid.p2 { transform: rotate(5deg) translate(10px, 6px); z-index: 2; }
+  .polaroid.p3 { transform: rotate(-3deg) translate(-8px, 14px); z-index: 1; }
+
+  .polaroid-stack:hover .p1,
+  .polaroid-stack.active .p1 { transform: rotate(-9deg) translate(-42px, -14px); }
+  .polaroid-stack:hover .p2,
+  .polaroid-stack.active .p2 { transform: rotate(3deg) translate(6px, 16px); }
+  .polaroid-stack:hover .p3,
+  .polaroid-stack.active .p3 { transform: rotate(11deg) translate(46px, -6px); }
+
+  @media (max-width: 620px) {
+    .hero-wrap { flex-direction: column; align-items: flex-start; gap: 32px; }
+    .polaroid-stack { align-self: center; }
+  }
+
   /* ---- Intro ---- */
 
   section.intro {
@@ -292,6 +383,20 @@
     margin: 0;
   }
 
+  .figma-link {
+    font-size: 15px;
+    margin-top: 6px;
+  }
+
+  .figma-link a {
+    font-weight: 500;
+  }
+
+  .figma-password {
+    font-size: 13px;
+    color: var(--ink-faint);
+  }
+
   /* ---- Skills ---- */
 
   section.skills {
@@ -354,17 +459,44 @@
 <body>
 
 <header class="hero">
-  <div class="wrap">
-    <h1>Sathvika Alle</h1>
-    <p class="role">Product designer working across research, interaction and visual design — currently building the authenticated, multi-user side of a live platform for university capstone coordinators.</p>
-    <div class="contact-row">
-      <a href="mailto:sathvikaalle@gmail.com">sathvikaalle@gmail.com</a>
-      <a href="https://www.linkedin.com/in/sathvikaalle" target="_blank" rel="noopener">LinkedIn</a>
-      <a href="https://github.com/sathvikaalle" target="_blank" rel="noopener">GitHub</a>
-      <span>Auckland, New Zealand</span>
+  <div class="wrap hero-wrap">
+    <div class="hero-text">
+      <h1 class="fade-in-1">Sathvika Alle</h1>
+      <p class="role fade-in-2">Product designer working across research, interaction and visual design — currently building the authenticated, multi-user side of a live platform for university capstone coordinators.</p>
+      <div class="contact-row fade-in-3">
+        <a href="mailto:sathvikaalle@gmail.com">sathvikaalle@gmail.com</a>
+        <a href="https://www.linkedin.com/in/sathvikaalle" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="https://github.com/sathvikaalle" target="_blank" rel="noopener">GitHub</a>
+        <span>Auckland, New Zealand</span>
+      </div>
+    </div>
+
+    <div class="polaroid-stack fade-in-4" id="polaroidStack" role="button" tabindex="0" aria-label="Photos of Sathvika — click to spread them out">
+      <div class="polaroid p3">
+        <img src="images/photo-dress.jpg" alt="Sathvika at night, lit archways behind her.">
+      </div>
+      <div class="polaroid p2">
+        <img src="images/photo-driving.jpg" alt="Sathvika giving a thumbs up while driving.">
+      </div>
+      <div class="polaroid p1">
+        <img src="images/photo-queenstown.jpg" alt="Sathvika smiling with a lake and mountains behind her in Queenstown.">
+      </div>
     </div>
   </div>
 </header>
+
+<script>
+  const stack = document.getElementById('polaroidStack');
+  if (stack) {
+    stack.addEventListener('click', () => stack.classList.toggle('active'));
+    stack.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        stack.classList.toggle('active');
+      }
+    });
+  }
+</script>
 
 <section class="intro">
   <div class="wrap prose">
@@ -470,10 +602,11 @@
       <div class="minor-item">
         <span class="tag">Figma prototype</span>
         <h3>UI/UX design project</h3>
-        <p>An interactive interface prototype built around a small reusable component system, with navigation and interaction decisions driven directly by user-needs analysis.</p>
-        <div class="img-placeholder small">
-          Add: 2–3 key screens from the prototype, or a link to the live Figma file set to "anyone with the link can view."
-        </div>
+        <p>An interactive interface prototype built around a small reusable component system, with navigation and interaction decisions driven directly by user-needs analysis — a complex enough workflow that it's best explored directly rather than as static screens.</p>
+        <p class="figma-link">
+          <a href="https://www.figma.com/design/bRt46QQAE4YvqqbxGAgkr4/FINAL-deliverable?node-id=0-1&t=xLkWvlmbTZAz84TB-1" target="_blank" rel="noopener">View the live Figma file →</a><br>
+          <span class="figma-password">Password: SafFigma</span>
+        </p>
       </div>
 
       <div class="minor-item wide">
@@ -504,6 +637,10 @@
     <div class="skill-row">
       <div class="label">Frontend</div>
       <div class="items">React, JavaScript, HTML/CSS, REST API integration, Webflow</div>
+    </div>
+    <div class="skill-row">
+      <div class="label">Technical foundations</div>
+      <div class="items">Python, Java, SQL, relational databases, AWS (Cognito), Git</div>
     </div>
     <div class="skill-row">
       <div class="label">Collaboration</div>
