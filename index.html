@@ -92,17 +92,36 @@
     to { opacity: 1; transform: translateY(0); }
   }
 
-  .fade-in-1, .fade-in-2, .fade-in-3, .fade-in-4 {
+  .fade-in-1, .fade-in-2, .fade-in-3 {
     opacity: 0;
     animation: fadeInUp 0.7s cubic-bezier(.2,.7,.3,1) forwards;
   }
   .fade-in-1 { animation-delay: 0.05s; }
   .fade-in-2 { animation-delay: 0.2s; }
   .fade-in-3 { animation-delay: 0.35s; }
-  .fade-in-4 { animation-delay: 0.45s; }
+
+  /* Each photo lays down on top of the last, in stacking order:
+     back photo (p3) first, then p2, then p1 lands on top. */
+  @keyframes layDown3 {
+    from { opacity: 0; transform: translateY(-70px) rotate(0deg) scale(0.82); }
+    to   { opacity: 1; transform: rotate(-3deg) translate(-8px, 14px); }
+  }
+  @keyframes layDown2 {
+    from { opacity: 0; transform: translateY(-70px) rotate(0deg) scale(0.82); }
+    to   { opacity: 1; transform: rotate(5deg) translate(10px, 6px); }
+  }
+  @keyframes layDown1 {
+    from { opacity: 0; transform: translateY(-70px) rotate(0deg) scale(0.82); }
+    to   { opacity: 1; transform: rotate(-7deg); }
+  }
+
+  .lay-in-3 { animation: layDown3 0.55s cubic-bezier(.22,.8,.25,1) 0.45s both; }
+  .lay-in-2 { animation: layDown2 0.55s cubic-bezier(.22,.8,.25,1) 0.75s both; }
+  .lay-in-1 { animation: layDown1 0.55s cubic-bezier(.22,.8,.25,1) 1.05s both; }
 
   @media (prefers-reduced-motion: reduce) {
-    .fade-in-1, .fade-in-2, .fade-in-3, .fade-in-4 { animation: none; opacity: 1; }
+    .fade-in-1, .fade-in-2, .fade-in-3 { animation: none; opacity: 1; }
+    .lay-in-1, .lay-in-2, .lay-in-3 { animation: none; }
     .polaroid { transition: none !important; }
   }
 
@@ -471,14 +490,14 @@
       </div>
     </div>
 
-    <div class="polaroid-stack fade-in-4" id="polaroidStack" role="button" tabindex="0" aria-label="Photos of Sathvika — click to spread them out">
-      <div class="polaroid p3">
+    <div class="polaroid-stack" id="polaroidStack" role="button" tabindex="0" aria-label="Photos of Sathvika — click to spread them out">
+      <div class="polaroid p3 lay-in-3">
         <img src="images/photo-dress.jpg" alt="Sathvika at night, lit archways behind her.">
       </div>
-      <div class="polaroid p2">
+      <div class="polaroid p2 lay-in-2">
         <img src="images/photo-driving.jpg" alt="Sathvika giving a thumbs up while driving.">
       </div>
-      <div class="polaroid p1">
+      <div class="polaroid p1 lay-in-1">
         <img src="images/photo-queenstown.jpg" alt="Sathvika smiling with a lake and mountains behind her in Queenstown.">
       </div>
     </div>
@@ -494,6 +513,13 @@
         e.preventDefault();
         stack.classList.toggle('active');
       }
+    });
+    // Once each photo's lay-down animation finishes, drop the animation
+    // class so it stops overriding the hover/active fan-out transforms.
+    stack.querySelectorAll('.polaroid').forEach((el) => {
+      el.addEventListener('animationend', () => {
+        el.classList.remove('lay-in-1', 'lay-in-2', 'lay-in-3');
+      }, { once: true });
     });
   }
 </script>
