@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sathvika Alle — Product Design Portfolio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&family=Public+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --paper: #F2F1EC;
+    --paper-raised: #FFFFFF;
+    --ink: #181C1F;
+    --ink-soft: #565F63;
+    --ink-faint: #8B9295;
+    --accent: #33605A;
+    --accent-tint: #E1E9E6;
+    --line: #D9D6CE;
+    --measure: 640px;
+  }
+
+  * { box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: 'Public Sans', -apple-system, sans-serif;
+    font-size: 17px;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  h1, h2, h3, .serif {
+    font-family: 'Newsreader', Georgia, serif;
+    font-weight: 500;
+    letter-spacing: -0.01em;
+    color: var(--ink);
+  }
+
+  a { color: var(--accent); text-decoration-thickness: 1px; text-underline-offset: 3px; }
+  a:hover { text-decoration-thickness: 2px; }
+
+  .wrap {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 0 32px;
+  }
+
+  .prose {
+    max-width: var(--measure);
+  }
+
+  /* ---- Header / Hero ---- */
+
+  header.hero {
+    padding: 96px 0 72px;
+    border-bottom: 1px solid var(--line);
+  }
+
+  .hero h1 {
+    font-size: clamp(40px, 6vw, 60px);
+    line-height: 1.05;
+    margin: 0 0 20px;
+  }
+
+  .hero .role {
+    font-size: 19px;
+    color: var(--ink-soft);
+    max-width: var(--measure);
+    margin: 0 0 32px;
+  }
+
+  .contact-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px 22px;
+    font-size: 15px;
+    color: var(--ink-soft);
+  }
+
+  .contact-row a { color: var(--ink-soft); }
+  .contact-row a:hover { color: var(--accent); }
+
+  /* ---- Intro ---- */
+
+  section.intro {
+    padding: 56px 0;
+    border-bottom: 1px solid var(--line);
+  }
+
+  section.intro p {
+    font-size: 19px;
+    color: var(--ink-soft);
+  }
+
+  /* ---- Work index ---- */
+
+  nav.index {
+    padding: 40px 0;
+    border-bottom: 1px solid var(--line);
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px 32px;
+    font-size: 15px;
+  }
+
+  nav.index a {
+    color: var(--ink);
+    padding-bottom: 2px;
+    border-bottom: 1px solid transparent;
+  }
+  nav.index a:hover { border-bottom-color: var(--accent); }
+
+  /* ---- Case studies ---- */
+
+  .case-study {
+    padding: 88px 0;
+    border-bottom: 1px solid var(--line);
+  }
+
+  .case-study .kicker {
+    font-size: 15px;
+    color: var(--accent);
+    margin: 0 0 10px;
+  }
+
+  .case-study h2 {
+    font-size: clamp(28px, 4vw, 38px);
+    margin: 0 0 18px;
+    max-width: 780px;
+  }
+
+  .meta-line {
+    color: var(--ink-soft);
+    font-size: 16px;
+    max-width: var(--measure);
+    margin: 0 0 40px;
+  }
+
+  .case-study .block {
+    max-width: var(--measure);
+    margin: 0 0 28px;
+  }
+
+  .case-study h3 {
+    font-size: 21px;
+    font-weight: 600;
+    margin: 0 0 10px;
+  }
+
+  .case-study p {
+    margin: 0 0 4px;
+    color: var(--ink);
+  }
+
+  .img-placeholder {
+    margin: 32px 0 40px;
+    border: 1.5px dashed var(--ink-faint);
+    border-radius: 4px;
+    background: var(--paper-raised);
+    padding: 40px 32px;
+    color: var(--ink-faint);
+    font-size: 14px;
+    line-height: 1.6;
+  }
+
+  .img-placeholder strong {
+    display: block;
+    color: var(--ink-soft);
+    font-size: 13px;
+    text-transform: none;
+    margin-bottom: 6px;
+  }
+
+  .img-placeholder.wide { max-width: 960px; }
+
+  .reflection {
+    max-width: var(--measure);
+    padding-top: 8px;
+    border-top: 1px solid var(--line);
+    margin-top: 44px;
+  }
+
+  .reflection h3 { color: var(--accent); }
+
+  /* ---- Minor work ---- */
+
+  section.minor {
+    padding: 72px 0;
+    border-bottom: 1px solid var(--line);
+  }
+
+  section.minor h2 {
+    font-size: 26px;
+    margin: 0 0 36px;
+  }
+
+  .minor-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 40px 48px;
+  }
+
+  .minor-item h3 {
+    font-size: 19px;
+    font-weight: 600;
+    margin: 0 0 8px;
+  }
+
+  .minor-item .tag {
+    display: block;
+    color: var(--accent);
+    font-size: 14px;
+    margin-bottom: 10px;
+  }
+
+  .minor-item p {
+    color: var(--ink-soft);
+    font-size: 15.5px;
+    margin: 0 0 14px;
+  }
+
+  .img-placeholder.small {
+    padding: 24px 20px;
+    font-size: 13px;
+    margin: 0;
+  }
+
+  /* ---- Skills ---- */
+
+  section.skills {
+    padding: 64px 0;
+    border-bottom: 1px solid var(--line);
+  }
+
+  section.skills h2 { font-size: 24px; margin: 0 0 28px; }
+
+  .skill-row {
+    display: flex;
+    gap: 24px;
+    padding: 14px 0;
+    border-top: 1px solid var(--line);
+    flex-wrap: wrap;
+  }
+  .skill-row:last-child { border-bottom: 1px solid var(--line); }
+
+  .skill-row .label {
+    width: 180px;
+    flex-shrink: 0;
+    color: var(--ink-soft);
+    font-size: 14.5px;
+  }
+
+  .skill-row .items {
+    flex: 1;
+    min-width: 240px;
+  }
+
+  /* ---- Footer ---- */
+
+  footer {
+    padding: 64px 0 96px;
+  }
+
+  footer h2 {
+    font-size: 26px;
+    margin: 0 0 14px;
+  }
+
+  footer p {
+    color: var(--ink-soft);
+    max-width: var(--measure);
+    margin: 0 0 24px;
+  }
+
+  footer .contact-row { font-size: 16px; }
+  footer .contact-row a { color: var(--ink); font-weight: 500; }
+
+  @media (max-width: 620px) {
+    .wrap { padding: 0 20px; }
+    header.hero { padding: 64px 0 48px; }
+    .case-study { padding: 64px 0; }
+    .skill-row { flex-direction: column; gap: 6px; }
+    .skill-row .label { width: auto; }
+  }
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="wrap">
+    <h1>Sathvika Alle</h1>
+    <p class="role">Product designer working across research, interaction and visual design — currently building the authenticated, multi-user side of a live platform for university capstone coordinators.</p>
+    <div class="contact-row">
+      <a href="mailto:sathvikaalle@gmail.com">sathvikaalle@gmail.com</a>
+      <a href="https://www.linkedin.com/in/sathvikaalle" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="#" target="_blank" rel="noopener">GitHub — add your link</a>
+      <span>Auckland, New Zealand</span>
+    </div>
+  </div>
+</header>
+
+<section class="intro">
+  <div class="wrap prose">
+    <p>I'm a final-year Computer Science and Commerce student at the University of Auckland. I design and build interfaces for systems with real complexity underneath them — authentication, multi-user roles, live client feedback — and work closely with the engineers who ship them. Below is a walkthrough of my main project, plus a few smaller pieces of design work.</p>
+  </div>
+</section>
+
+<nav class="index">
+  <a href="#project-31">Project 31 — capstone platform</a>
+  <a href="#minor-work">Other design work</a>
+  <a href="#skills">Skills</a>
+</nav>
+
+<section class="case-study" id="project-31">
+  <div class="wrap">
+    <p class="kicker">Case study</p>
+    <h2>Designing the authenticated core of a platform for capstone coordinators across Australasia</h2>
+    <p class="meta-line">UI/UX &amp; Authentication Developer, within a six-person Agile team. Real external client — university capstone-course coordinators across Australia and New Zealand. 2026, ongoing.</p>
+
+    <div class="block">
+      <h3>The problem</h3>
+      <p>Capstone coordinators across different universities had no shared place to find each other, share project models, or coordinate across institutions. Our client asked for a web platform that could support registration, member profiles, and role-based authenticated functionality for a growing, distributed user base — not a marketing site, but a working tool people would return to.</p>
+    </div>
+
+    <div class="img-placeholder wide">
+      <strong>Add: early wireframes or user-flow sketches</strong>
+      Low-fidelity wireframes or a flow diagram showing how a coordinator moves from landing on the site to registering and completing their profile. Even a phone photo of whiteboard sketches works here — this section should show your thinking, not just the finished screen.
+    </div>
+
+    <div class="block">
+      <h3>Research and requirements</h3>
+      <p>Requirements came from regular meetings with the client, not a brief handed to us upfront. I translated what coordinators told us they needed — clear onboarding, trustworthy authentication, an easy way to find and manage their own listings — into concrete interface decisions, then checked those decisions against the client's feedback each iteration.</p>
+    </div>
+
+    <div class="block">
+      <h3>Design system and components</h3>
+      <p>I designed and maintain the platform's reusable UI components and page structures in Figma, so the six of us could build new features without reinventing patterns each time. Registration, login, and profile screens all draw from the same component set.</p>
+    </div>
+
+    <div class="img-placeholder wide">
+      <strong>Add: Figma component library or design system screenshot</strong>
+      A screenshot of your Figma file showing the reusable components (buttons, form fields, cards, nav) as a set — this is the single most convincing image for a role that explicitly asks about "flexible, reusable UI components."
+    </div>
+
+    <div class="block">
+      <h3>From design to build</h3>
+      <p>I own UI/UX and authentication end to end, which means I also see designs through to the React front end, integrated with AWS Cognito. Working this close to implementation shaped how I design — I know what's easy to build responsively and what isn't, and I design with that in mind rather than handing off screens I haven't tested against the real constraints.</p>
+    </div>
+
+    <div class="img-placeholder wide">
+      <strong>Add: final UI screenshots (desktop + mobile)</strong>
+      One or two clean screenshots of the actual registration or profile screens, ideally showing the same screen at desktop and mobile width to demonstrate the responsive design work.
+    </div>
+
+    <div class="reflection">
+      <h3>What I'd do differently</h3>
+      <p>Write two or three honest sentences here — something you'd change with hindsight, or a trade-off you made under time pressure. A real reflection is more convincing than a polished summary, and reviewers specifically read for it.</p>
+    </div>
+  </div>
+</section>
+
+<section class="minor" id="minor-work">
+  <div class="wrap">
+    <h2>Other design work</h2>
+    <div class="minor-grid">
+
+      <div class="minor-item">
+        <span class="tag">Figma prototype</span>
+        <h3>UI/UX design project</h3>
+        <p>An interactive interface prototype built around a small reusable component system, with navigation and interaction decisions driven directly by user-needs analysis.</p>
+        <div class="img-placeholder small">
+          Add: 2–3 key screens from the prototype, or a link to the live Figma file set to "anyone with the link can view."
+        </div>
+      </div>
+
+      <div class="minor-item">
+        <span class="tag">Webflow &amp; Figma — HCI coursework</span>
+        <h3>Applying HCI theory to interface design</h3>
+        <p>Coursework applying Fitts' Law, Nielsen's heuristics and Gestalt principles to page and component design, built and tested in Webflow alongside a matching Figma component system.</p>
+        <div class="img-placeholder small">
+          Add: a before/after or annotated screenshot showing one specific HCI principle in action — this is a good place to show your reasoning, not just the output.
+        </div>
+      </div>
+
+      <div class="minor-item">
+        <span class="tag">ZEIL Hackathon — Top 5 finalist</span>
+        <h3>Interface design for an AI-driven recruitment tool</h3>
+        <p>Product ideation and interface design for an AI-driven recruitment solution, built with a multidisciplinary team and pitched under tight time constraints.</p>
+        <div class="img-placeholder small">
+          Add: a screenshot of the pitch deck or prototype, if you still have it from the hackathon.
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section class="skills" id="skills">
+  <div class="wrap">
+    <h2>Skills</h2>
+    <div class="skill-row">
+      <div class="label">Design</div>
+      <div class="items">User research, wireframing, prototyping, Figma, design systems, usability testing, HCI principles</div>
+    </div>
+    <div class="skill-row">
+      <div class="label">Frontend</div>
+      <div class="items">React, JavaScript, HTML/CSS, REST API integration, Webflow</div>
+    </div>
+    <div class="skill-row">
+      <div class="label">Collaboration</div>
+      <div class="items">Agile teamwork, cross-functional collaboration, stakeholder communication</div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <h2>Get in touch</h2>
+    <p>Final-year Computer Science and Commerce student at the University of Auckland, graduating November 2026. Open to product design roles.</p>
+    <div class="contact-row">
+      <a href="mailto:sathvikaalle@gmail.com">sathvikaalle@gmail.com</a>
+      <a href="https://www.linkedin.com/in/sathvikaalle" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="#" target="_blank" rel="noopener">GitHub — add your link</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
