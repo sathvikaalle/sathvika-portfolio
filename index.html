@@ -3,7 +3,19 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Sathvika Alle — Product Design Portfolio</title>
+<title>Sathvika Alle Portfolio</title>
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="Sathvika Alle Portfolio">
+<meta property="og:description" content="Product design portfolio – case studies, projects, and contact info.">
+<meta property="og:image" content="https://sathvikaalle.github.io/sathvika-portfolio/images/og-image.png">
+<meta property="og:url" content="https://sathvikaalle.github.io/sathvika-portfolio/">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Sathvika Alle Portfolio">
+<meta name="twitter:description" content="Product design portfolio – case studies, projects, and contact info.">
+<meta name="twitter:image" content="https://sathvikaalle.github.io/sathvika-portfolio/images/og-image.png">
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&family=Public+Sans:wght@400;500;600&display=swap" rel="stylesheet">
@@ -481,7 +493,7 @@
   <div class="wrap hero-wrap">
     <div class="hero-text">
       <h1 class="fade-in-1">Sathvika Alle</h1>
-      <p class="role fade-in-2">Product designer working across research, interaction and visual design — currently building the authenticated, multi-user side of a live platform for university capstone coordinators.</p>
+      <p class="role fade-in-2">Aspiring UI/UX designer working across research, interaction and visual design – currently building the authenticated, multi-user side of a live platform for university capstone coordinators.</p>
       <div class="contact-row fade-in-3">
         <a href="mailto:sathvikaalle@gmail.com">sathvikaalle@gmail.com</a>
         <a href="https://www.linkedin.com/in/sathvikaalle" target="_blank" rel="noopener">LinkedIn</a>
@@ -490,7 +502,7 @@
       </div>
     </div>
 
-    <div class="polaroid-stack" id="polaroidStack" role="button" tabindex="0" aria-label="Photos of Sathvika — click to spread them out">
+    <div class="polaroid-stack" id="polaroidStack" role="button" tabindex="0" aria-label="Photos of Sathvika – click to spread them out">
       <div class="polaroid p3 lay-in-3">
         <img src="images/photo-dress.jpg" alt="Sathvika at night, lit archways behind her.">
       </div>
@@ -526,12 +538,12 @@
 
 <section class="intro">
   <div class="wrap prose">
-    <p>I'm a final-year Computer Science and Commerce student at the University of Auckland. I design and build interfaces for systems with real complexity underneath them — authentication, multi-user roles, live client feedback — and work closely with the engineers who ship them. Below is a walkthrough of my main project, plus a few smaller pieces of design work.</p>
+    <p>I'm a final-year Computer Science and Commerce student at the University of Auckland. I design and build interfaces for systems with real complexity underneath them – authentication, multi-user roles, live client feedback – and work closely with the engineers who ship them. Below is a walkthrough of my main project, plus a few smaller pieces of design work.</p>
   </div>
 </section>
 
 <nav class="index">
-  <a href="#project-31">Project 31 — capstone platform</a>
+  <a href="#project-31">Project 31 – capstone platform</a>
   <a href="#minor-work">Other design work</a>
   <a href="#skills">Skills</a>
 </nav>
@@ -540,21 +552,21 @@
   <div class="wrap">
     <p class="kicker">Case study</p>
     <h2>Designing the authenticated core of a platform for capstone coordinators across Australasia</h2>
-    <p class="meta-line">UI/UX &amp; Authentication Developer, within a six-person Agile team. Real external client — university capstone-course coordinators across Australia and New Zealand. 2026, ongoing.</p>
+    <p class="meta-line">UI/UX &amp; Authentication Developer, within a six-person Agile team. Real external client – university capstone-course coordinators across Australia and New Zealand. 2026, ongoing.</p>
 
     <div class="block">
       <h3>The problem</h3>
-      <p>Capstone coordinators across different universities had no shared place to find each other, share project models, or coordinate across institutions. Our client asked for a web platform that could support registration, member profiles, and role-based authenticated functionality for a growing, distributed user base — not a marketing site, but a working tool people would return to.</p>
+      <p>Capstone coordinators across different universities had no shared place to find each other, share project models, or coordinate across institutions. Our client asked for a web platform that could support registration, member profiles, and role-based authenticated functionality for a growing, distributed user base – not a marketing site, but a working tool people would return to.</p>
     </div>
 
     <figure class="case-image wide">
       <img src="images/project31-landing.png" alt="Public landing page for the ACCA capstone community platform, showing the value proposition and live community stats.">
-      <figcaption>The public landing page introduces the community and its scale — 148 coordinators, 31 universities — before asking anyone to commit to signing up.</figcaption>
+      <figcaption>The public landing page introduces the community and its scale – 148 coordinators, 31 universities – before asking anyone to commit to signing up.</figcaption>
     </figure>
 
     <div class="block">
       <h3>Research and requirements</h3>
-      <p>Requirements came from regular meetings with the client, not a brief handed to us upfront. I translated what coordinators told us they needed — clear onboarding, trustworthy authentication, an easy way to find and manage their own listings — into concrete interface decisions, then checked those decisions against the client's feedback each iteration.</p>
+      <p>Requirements came from regular meetings with the client, not a brief handed to us upfront. I translated what coordinators told us they needed – clear onboarding, trustworthy authentication, an easy way to find and manage their own listings – into concrete interface decisions, then checked those decisions against the client's feedback each iteration.</p>
       <p>Registration was the sharpest example. Coordinators register with a university email, but institution names and email domains don't always match what a person expects. Rather than let a mismatched domain fail silently or bounce someone out of the flow, I designed the validation to surface inline, with a specific, correctable message.</p>
     </div>
 
@@ -564,17 +576,17 @@
         <img src="images/project31-reg-domain-error.png" alt="Registration step two showing an inline domain mismatch error when the entered email doesn't match the selected institution.">
         <img src="images/project31-reg-verify.png" alt="Registration step three, a confirmation screen asking the user to check their inbox for a verification link.">
       </div>
-      <figcaption>Institution selection, domain validation with an inline error state, and email verification — three steps designed so a mismatch is caught and explained before it becomes a dead end.</figcaption>
+      <figcaption>Institution selection, domain validation with an inline error state, and email verification – three steps designed so a mismatch is caught and explained before it becomes a dead end.</figcaption>
     </figure>
 
     <figure class="case-image wide">
       <img src="images/project31-profile-setup.png" alt="Member profile setup screen with structured teaching and learning interest tags, and a profile completion indicator.">
-      <figcaption>Profile setup uses structured interest tags rather than free text, so members are discoverable by what they actually teach and research — directly serving the platform's purpose of connecting coordinators.</figcaption>
+      <figcaption>Profile setup uses structured interest tags rather than free text, so members are discoverable by what they actually teach and research – directly serving the platform's purpose of connecting coordinators.</figcaption>
     </figure>
 
     <div class="block">
       <h3>Owning authentication and access</h3>
-      <p>Beyond the visual design, I own how the interface communicates access itself. Course content behaves differently depending on whether someone is a guest, a member with an incomplete profile, or a fully verified member — rather than hide that logic, I designed the interface to state it plainly, with a clear next action for each state.</p>
+      <p>Beyond the visual design, I own how the interface communicates access itself. Course content behaves differently depending on whether someone is a guest, a member with an incomplete profile, or a fully verified member – rather than hide that logic, I designed the interface to state it plainly, with a clear next action for each state.</p>
     </div>
 
     <figure class="case-image wide">
@@ -584,7 +596,7 @@
 
     <div class="block">
       <h3>From design to build</h3>
-      <p>I see designs through to the React front end, integrated with AWS Cognito. Working this close to implementation shaped how I design — I know what's easy to build responsively and what isn't, and I design with that in mind rather than handing off screens I haven't tested against the real constraints.</p>
+      <p>I see designs through to the React front end, integrated with AWS Cognito. Working this close to implementation shaped how I design – I know what's easy to build responsively and what isn't, and I design with that in mind rather than handing off screens I haven't tested against the real constraints.</p>
     </div>
 
     <figure class="case-image wide">
@@ -592,17 +604,17 @@
         <img src="images/project31-directory.png" alt="Members directory desktop view, showing a searchable grid of verified educator profile cards.">
         <img src="images/project31-directory-mobile.png" alt="Members directory mobile view, showing the same educator profiles in a single-column responsive layout.">
       </div>
-      <figcaption>The members directory at desktop and mobile width — the same searchable, filterable structure adapted rather than simplified away.</figcaption>
+      <figcaption>The members directory at desktop and mobile width – the same searchable, filterable structure adapted rather than simplified away.</figcaption>
     </figure>
 
     <figure class="case-image wide">
       <img src="images/project31-insights.png" alt="Comparative insights dashboard showing project type breakdown and assessment mix across selected institutions, with bar charts and a stacked percentage bar.">
-      <figcaption>Comparative insights, aggregating member-contributed course data into a filterable dashboard — the most data-dense screen in the platform, and the one I'm proudest of getting to read clearly at a glance.</figcaption>
+      <figcaption>Comparative insights, aggregating member-contributed course data into a filterable dashboard – the most data-dense screen in the platform, and the one I'm proudest of getting to read clearly at a glance.</figcaption>
     </figure>
 
     <div class="reflection">
       <h3>What I'd do differently</h3>
-      <p>If I could revisit one decision, it'd be mobile navigation. The current pattern works, but it wasn't designed with the same care as the desktop flows, and it shows on smaller screens. It's actually something the team is actively reworking right now — a good reminder that responsive design needs the same iteration as the first pass, not just a scaled-down version of it.</p>
+      <p>If I could revisit one decision, it'd be mobile navigation. The current pattern works, but it wasn't designed with the same care as the desktop flows, and it shows on smaller screens. It's actually something the team is actively reworking right now – a good reminder that responsive design needs the same iteration as the first pass, not just a scaled-down version of it.</p>
     </div>
   </div>
 </section>
@@ -613,22 +625,22 @@
     <div class="minor-grid">
 
       <div class="minor-item wide">
-        <span class="tag">Figma — HCI coursework</span>
-        <h3>BestEthical.kiwi — applying HCI theory to interface design</h3>
+        <span class="tag">Figma – HCI coursework</span>
+        <h3>BestEthical.kiwi – applying HCI theory to interface design</h3>
         <p>A KiwiSaver fund landing page and registration flow, designed against specific principles rather than general instinct: Gestalt figure-ground and proximity, Nielsen's recognition-over-recall, and accessible form structure with labelled fields and strong colour contrast throughout.</p>
         <figure class="case-image">
           <div class="duo-grid even">
             <img src="images/bestethical-landing.png" alt="BestEthical.kiwi landing page hero section with a large high-contrast heading and two call-to-action buttons against a dark teal background.">
-            <img src="images/bestethical-registration.png" alt="KiwiSaver registration form grouped into three columns — personal information, contact and tax, and tax and employment.">
+            <img src="images/bestethical-registration.png" alt="KiwiSaver registration form grouped into three columns – personal information, contact and tax, and tax and employment.">
           </div>
-          <figcaption>Left: figure-ground — the oversized, high-contrast heading and CTA advance against the darker background, directing attention to "Join or switch KiwiSaver" before the testimonial below. Right: proximity and common region — fields group into three visually separated columns, and selectable rate and employment options replace recall with recognition.</figcaption>
+          <figcaption>Left: figure-ground – the oversized, high-contrast heading and CTA advance against the darker background, directing attention to "Join or switch KiwiSaver" before the testimonial below. Right: proximity and common region – fields group into three visually separated columns, and selectable rate and employment options replace recall with recognition.</figcaption>
         </figure>
       </div>
 
       <div class="minor-item">
         <span class="tag">Figma prototype</span>
         <h3>UI/UX design project</h3>
-        <p>An interactive interface prototype built around a small reusable component system, with navigation and interaction decisions driven directly by user-needs analysis — a complex enough workflow that it's best explored directly rather than as static screens.</p>
+        <p>An interactive interface prototype built around a small reusable component system, with navigation and interaction decisions driven directly by user-needs analysis – a complex enough workflow that it's best explored directly rather than as static screens.</p>
         <p class="figma-link">
           <a href="https://www.figma.com/design/bRt46QQAE4YvqqbxGAgkr4/FINAL-deliverable?node-id=0-1&t=xLkWvlmbTZAz84TB-1" target="_blank" rel="noopener">View the live Figma file →</a><br>
           <span class="figma-password">Password: SafFigma</span>
@@ -636,9 +648,9 @@
       </div>
 
       <div class="minor-item wide">
-        <span class="tag">ZEIL Hackathon — Top 5 finalist</span>
-        <h3>ZEIL — an AI-driven job matching app</h3>
-        <p>ZEIL is a swipe-based job discovery app: candidates page through matches with Pass, Save or Apply actions, while an AI-driven fit score surfaces the specific skill separating them from a stronger match. I contributed product ideation and interface design within a multidisciplinary hackathon team, taking the prototype from onboarding through to application tracking under a tight pitch deadline — landing Top 5.</p>
+        <span class="tag">ZEIL Hackathon – Top 5 finalist</span>
+        <h3>ZEIL – an AI-driven job matching app</h3>
+        <p>ZEIL is a swipe-based job discovery app: candidates page through matches with Pass, Save or Apply actions, while an AI-driven fit score surfaces the specific skill separating them from a stronger match. I contributed product ideation and interface design within a multidisciplinary hackathon team, taking the prototype from onboarding through to application tracking under a tight pitch deadline – landing Top 5.</p>
         <figure class="case-image">
           <div class="triptych-grid">
             <img src="images/zeil-swipe.png" alt="ZEIL swipe interface for reviewing a job match, with Pass, Save and Apply actions.">
